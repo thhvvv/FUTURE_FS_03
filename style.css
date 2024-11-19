@@ -1,20 +1,23 @@
-*{
+* {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
 :root {
-    --background: #000430;
-    --secondaryBackground: #171c48;
-    --text: #fff;
-    --purple: #828dff;
-    --teal: #24feee;
-}
+    --background: #070707;
+    --secondaryBackground: #2a2a2a;
+    --text: #d4d4d4;
+    --purple: #17311a;
+    --teal: #8f5224;
+
 body {
     background-color: var(--background);
     color: var(--text);
+    font-family: Arial, sans-serif;
+    line-height: 1.5;
 }
+
 .container {
     display: flex;
     flex-direction: column;
@@ -23,6 +26,7 @@ body {
     margin: 120px auto 0 auto;
     max-width: 500px;
 }
+
 .stats-container {
     padding: 30px;
     border-radius: 10px;
@@ -32,9 +36,11 @@ body {
     gap: 50px;
     width: 100%;
 }
+
 .details {
     width: 100%;
 }
+
 #progressBar {
     width: 100%;
     height: 10px;
@@ -42,13 +48,15 @@ body {
     border-radius: 5px;
     margin-top: 20px;
 }
+
 #progress {
-    width: 50%;
+    width: 0%; /* Initial width is 0% */
     height: 10px;
     background-color: var(--teal);
     border-radius: 10px;
     transition: all 0.3s ease;
 }
+
 #numbers {
     width: 100px;
     height: 100px;
@@ -60,11 +68,14 @@ body {
     font-size: 30px;
     font-weight: bold;
 }
+
 form {
     margin-top: 60px;
     width: 100%;
     display: flex;
+    gap: 10px;
 }
+
 input {
     flex: 1;
     padding: 16px;
@@ -73,7 +84,9 @@ input {
     border-radius: 10px;
     outline: none;
     color: var(--text);
+    font-size: 16px;
 }
+
 button {
     width: 50px;
     height: 50px;
@@ -86,4 +99,64 @@ button {
     font-size: 30px;
     font-weight: bold;
     outline: none;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+button:hover {
+    background-color: var(--teal);
+}
+
+#task-list {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin-top: 30px;
+    width: 100%;
+    list-style: none;
+}
+
+.taskItem {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: var(--secondaryBackground);
+    padding: 10px;
+    border-radius: 10px;
+    width: 100%;
+}
+
+.task {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.task input[type="checkbox"] {
+    width: 20px;
+    height: 20px;
+    cursor: pointer;
+}
+
+.task p {
+    margin: 0;
+    color: var(--text);
+    font-size: 16px;
+    text-decoration: none;
+}
+
+.task.completed p {
+    text-decoration: line-through;
+    color: var(--teal);
+}
+
+.taskItem img {
+    width: 24px;
+    height: 24px;
+    cursor: pointer;
+    transition: transform 0.2s ease;
+}
+
+.taskItem img:hover {
+    transform: scale(1.2);
 }
