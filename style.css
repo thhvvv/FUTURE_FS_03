@@ -7,9 +7,9 @@
 :root {
     --background: #070707;
     --secondaryBackground: #2a2a2a;
-    --text: #d4d4d4;
-    --purple: #17311a;
-    --teal: #8f5224;
+    --text: #eadede;
+    --purple: #093f10;
+    --teal: #15857d;
 
 body {
     background-color: var(--background);
@@ -159,4 +159,22 @@ button:hover {
 
 .taskItem img:hover {
     transform: scale(1.2);
+}
+
+#progressBar {
+    width: 100%;
+    height: 10px;
+    background-color: var(--background); 
+    border-radius: 5px;
+    margin-top: 20px;
+    overflow: hidden; 
+    position: relative;
+}
+
+#progress {
+    width: 0%; 
+    height: 100%;
+    background-color: var(--teal); 
+    border-radius: 5px 0 0 5px; 
+    transition: width 0.4s ease-in-out; 
 }
